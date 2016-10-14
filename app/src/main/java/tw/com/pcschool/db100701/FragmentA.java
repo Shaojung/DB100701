@@ -14,7 +14,8 @@ import android.widget.TextView;
  * A simple {@link Fragment} subclass.
  */
 public class FragmentA extends Fragment {
-
+    Button btn;
+    TextView tv;
 
     public FragmentA() {
         // Required empty public constructor
@@ -27,16 +28,26 @@ public class FragmentA extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_a, container, false);
 
-        final TextView tv = (TextView) v.findViewById(R.id.textView);
-        Button btn = (Button) v.findViewById(R.id.button);
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                tv.setText("Hello Hello");
-            }
-        });
+        tv = (TextView) v.findViewById(R.id.textView);
+        btn = (Button) v.findViewById(R.id.button);
+
 
         return v;
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        final TextView tv2 = (TextView) getActivity().findViewById(R.id.textView1);
+
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tv.setText("Hello Hello");
+                tv2.setText("BB Hello");
+            }
+        });
+
+    }
 }

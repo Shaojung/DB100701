@@ -7,12 +7,19 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="tw.com.pcschool.db100701.MainActivity">
+    tools:context="tw.com.pcschool.db100701.MainActivity"
+    android:orientation="vertical">
     <fragment
         android:id="@+id/fragment_a"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:name="tw.com.pcschool.db100701.FragmentA" />
-
+        android:name="tw.com.pcschool.db100701.FragmentA"
+        tools:layout="@layout/fragment_a" />
+    <fragment
+        android:id="@+id/fragment_b"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:name="tw.com.pcschool.db100701.FragmentB"
+        tools:layout="@layout/fragment_b" />
 
 </LinearLayout>
